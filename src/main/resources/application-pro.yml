@@ -15,13 +15,6 @@ spring:
     multipart:
       location: /home/images
 
-  cloud:
-    alicloud:
-      access-key: LTAI5tGNEYNKHY3AbhjLxZbs
-      secret-key: qaOTdyXaWgwsG58e0y9TiVs5dQgKiG
-      oss:
-        endpoint: oss-cn-beijing.aliyuncs.com
-      bucketName: blogjklee
 
 mybatis:
   type-aliases-package: com.ljk.pojo
