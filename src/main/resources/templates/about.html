@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+
+<body class="bg3">
+<div id="pjax-container">
+    <!--导航-->
+    <nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment m-shadow-small">
+        <div class="ui container">
+            <!--        stackable小页面堆叠属性-->
+            <div class="ui inverted secondary menu stackable m-padded-tb-mini">
+                <h2 class="ui teal header item">JK's Blog</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    手机端显示菜单，jQuery获取toggle-->
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!--中间-->
+    <div class="m-container m-padded-tb-big">
+        <div class="ui animated fadeIn container">
+            <div class="ui stackable grid">
+                <!--        header-->
+                <div class="five wide column">
+                    <h2 class="ui header m-margin-bottom-mini" style="color: rgba(255,255,255,0.71)"><i class="user secret icon"></i>关于Lee</h2>
+                    <div class="ui grey white-transform attached segment" style="border: 0">
+                        <p class="m-text">一名大四的学生OvO</p>
+                        <p class="m-text">热爱编程，努力学习技术ing...<br>喜欢篮球、动漫和音乐，欢迎和我交流</p>
+                    </div>
+                    <div class="ui violet white-transform attached segment">
+                        <h3 style="color: grey"><i class="yellow star icon"></i>兴趣</h3>
+                        <div class="ui blue label">编程</div>
+                        <div class="ui violet label">篮球</div>
+                        <div class="ui red label">动漫</div>
+                        <div class="ui orange label">读书</div>
+                    </div>
+                    <div class="ui olive white-transform attached segment" style="border: 0">
+                        <h3 style="color: grey"><i class="yellow moon icon"></i>技术</h3>
+                        <div class="ui blue label">Java</div>
+                        <div class="ui violet label">前端</div>
+                        <div class="ui red label">C</div>
+                        <div class="ui orange label">Linux</div>
+                        <div class="ui teal label">算法</div>
+                    </div>
+                    <div class="ui pink white-transform attached segment" style="border: 0">
+                        <a href="https://weibo.com/" class="ui circular basic icon button m-padded-mini"><i
+                                class="big weibo icon"></i></a>
+                        <a href="https://github.com/" target="_blank" class="ui circular basic icon button m-padded-mini"><i class="big github icon"></i></a>
+                        <a class="ui circular basic icon button m-padded-mini"><i
+                                class="big wechat icon"></i></a>
+                        <a href="tencent://message/?uin=727919835&Site=&Menu=yes" class="ui qq circular basic icon button m-padded-mini"
+                           data-position="bottom center"><i class="big qq icon"></i></a>
+                    </div>
+                    <div>
+                        <div class="ui wechat-qr flowing popup transition hidden">
+                            <img src="../static/image/wechat.jpg" th:src="@{/image/wechat.jpg}" alt="" class="ui rounded image" style="width: 100px">
+                        </div>
+                    </div>
+                </div>
+                <div class="eleven wide column">
+                    <div style="position: relative; padding: 30% 45%;">
+                        <iframe src="//player.bilibili.com/player.html?aid=795637027&bvid=BV1tC4y1H7yz&cid=192966399&page=1&high_quality=1&danmaku=0"
+                                scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                                style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/image/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">你好我叫LiJingkun</a>
+                    <a href="#" class="item">莫愁前路无知己</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">QQ：727919835</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">简介</h4>
+                <p class="m-text-thin m-padded-tb-mini">这是我的博客</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-padded-tb-mini m-opacity-mini m-text-spaced">Copyright@2020-2021 Designed by
+            LiJingkun</p>
+    </div>
+
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+<!--利用jQuery获取到菜单-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.wechat').popup({
+        popup: $('.wechat-qr.popup'),
+        on: 'click',
+        position: 'top center'
+    });
+</script>
+<script>
+    $(function () {
+        $(document).pjax('a[target!="_blank"]', '#pjax-container', {
+            fragment: '#pjax-container',
+            timeout: 8000,
+            type: 'GET'
+        });
+
+        $(document).on('submit', 'form', function (event) {
+            //var container = $(this).closest('[pjax-container]');
+            $.pjax.submit(event, '#pjax-container', {
+                fragment: '#pjax-container', timeout: 8000
+            });
+        });
+
+    })
+</script>
+</body>
+</html>

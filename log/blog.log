@@ -1,0 +1,54 @@
+2021-09-16 14:13:18.193  INFO 15216 --- [restartedMain] com.ljk.BlogApplication                  : Starting BlogApplication using Java 1.8.0_221 on DESKTOP-J32I6QG with PID 15216 (E:\code\jkblog\target\classes started by JKL in E:\code\jkblog)
+2021-09-16 14:13:18.205 DEBUG 15216 --- [restartedMain] com.ljk.BlogApplication                  : Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-09-16 14:13:18.205  INFO 15216 --- [restartedMain] com.ljk.BlogApplication                  : The following profiles are active: pro
+2021-09-16 14:13:18.283  INFO 15216 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\JKL\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar referenced one or more files that do not exist: file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-api.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/activation.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jsr173_1.0_api.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb1-impl.jar
+2021-09-16 14:13:18.283  INFO 15216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-16 14:13:18.284  INFO 15216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-16 14:13:19.609  INFO 15216 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-16 14:13:19.614  INFO 15216 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-16 14:13:19.671  INFO 15216 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2021-09-16 14:13:20.418  INFO 15216 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.ljk.config.RedisConfig$$EnhancerBySpringCGLIB$$17293929] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-16 14:13:21.245  INFO 15216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-09-16 14:13:21.259  INFO 15216 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-16 14:13:21.259  INFO 15216 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-16 14:13:21.426  INFO 15216 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-16 14:13:21.427  INFO 15216 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3141 ms
+2021-09-16 14:13:22.258  INFO 15216 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-09-16 14:13:22.420  INFO 15216 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-09-16 14:13:25.635  INFO 15216 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-16 14:13:26.510  INFO 15216 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-09-16 14:13:30.387  INFO 15216 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-09-16 14:13:34.634  INFO 15216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-09-16 14:13:36.653  INFO 15216 --- [restartedMain] com.ljk.BlogApplication                  : Started BlogApplication in 21.268 seconds (JVM running for 26.509)
+2021-09-16 14:13:44.761  INFO 15216 --- [SpringContextShutdownHook] c.a.alicloud.oss.OssApplicationListener  : 1 OSSClients will be shutdown soon
+2021-09-16 14:13:44.764  INFO 15216 --- [SpringContextShutdownHook] c.a.alicloud.oss.OssApplicationListener  : shutdown ossClient: ossClient
+2021-09-16 14:13:46.175  INFO 15216 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-16 14:13:46.177  INFO 15216 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-09-16 14:13:46.178  INFO 15216 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2021-09-16 14:13:58.400  INFO 5672 --- [restartedMain] com.ljk.BlogApplication                  : Starting BlogApplication using Java 1.8.0_221 on DESKTOP-J32I6QG with PID 5672 (E:\code\jkblog\target\classes started by JKL in E:\code\jkblog)
+2021-09-16 14:13:58.404 DEBUG 5672 --- [restartedMain] com.ljk.BlogApplication                  : Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-09-16 14:13:58.404  INFO 5672 --- [restartedMain] com.ljk.BlogApplication                  : The following profiles are active: pro
+2021-09-16 14:13:58.466  INFO 5672 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\JKL\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar referenced one or more files that do not exist: file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-api.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/activation.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jsr173_1.0_api.jar,file:/C:/Users/JKL/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb1-impl.jar
+2021-09-16 14:13:58.466  INFO 5672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-16 14:13:58.466  INFO 5672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-16 14:13:59.536  INFO 5672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-16 14:13:59.540  INFO 5672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-16 14:13:59.585  INFO 5672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2021-09-16 14:14:00.271  INFO 5672 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.ljk.config.RedisConfig$$EnhancerBySpringCGLIB$$99c9a34d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-16 14:14:01.212  INFO 5672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-09-16 14:14:01.227  INFO 5672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-16 14:14:01.228  INFO 5672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-16 14:14:01.392  INFO 5672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-16 14:14:01.393  INFO 5672 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2925 ms
+2021-09-16 14:14:02.152  INFO 5672 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-09-16 14:14:02.277  INFO 5672 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-09-16 14:14:04.926  INFO 5672 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-16 14:14:05.169  INFO 5672 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-09-16 14:14:08.665  INFO 5672 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-09-16 14:14:12.460  INFO 5672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-09-16 14:14:14.543  INFO 5672 --- [restartedMain] com.ljk.BlogApplication                  : Started BlogApplication in 19.269 seconds (JVM running for 22.623)
+2021-09-16 15:02:02.368  INFO 5672 --- [SpringContextShutdownHook] c.a.alicloud.oss.OssApplicationListener  : 1 OSSClients will be shutdown soon
+2021-09-16 15:02:02.370  INFO 5672 --- [SpringContextShutdownHook] c.a.alicloud.oss.OssApplicationListener  : shutdown ossClient: ossClient
+2021-09-16 15:02:03.649  INFO 5672 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-16 15:02:03.651  INFO 5672 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-09-16 15:02:03.652  INFO 5672 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

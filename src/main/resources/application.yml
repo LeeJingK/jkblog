@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: pro
+
+  servlet:
+    multipart: #配置文件上传
+      max-file-size: 1000MB #设置上传的单个文件最大值，单位可以是 MB、KB，默认为 1MB
+      max-request-size: 1024MB #设置多文件上传时，单次内多个文件的总量的最大值，单位可以是 MB、KB，默认为 10 M
+
+comment:
+  avatar: /image/avatar.jpg

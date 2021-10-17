@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://8.140.164.106:3306/blogs?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+
+  servlet:
+    multipart:
+      location: /home/images
+
+  cloud:
+    alicloud:
+      access-key: LTAI5tGNEYNKHY3AbhjLxZbs
+      secret-key: qaOTdyXaWgwsG58e0y9TiVs5dQgKiG
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+      bucketName: blogjklee
+
+mybatis:
+  type-aliases-package: com.ljk.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    root: info
+    com.ljk: debug
+  file:
+    name: log/blog.log
+
+server:
+  port: 8081

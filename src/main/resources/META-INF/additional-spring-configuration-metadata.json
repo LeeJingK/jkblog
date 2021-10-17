@@ -1,0 +1,43 @@
+{
+  "properties": [
+    {
+      "name": "comment.avatar",
+      "type": "java.lang.String",
+      "description": "Description for comment.avatar."
+    },
+    {
+      "name": "spring.type-aliases-package",
+      "type": "java.lang.String",
+      "description": "Description for spring.type-aliases-package."
+    },
+    {
+      "name": "redis.host",
+      "type": "java.lang.String",
+      "description": "Description for redis.host."
+    },
+    {
+      "name": "redis.port",
+      "type": "java.lang.String",
+      "description": "Description for redis.port."
+    },
+    {
+      "name": "spring.servlet.multipart",
+      "type": "java.lang.String",
+      "description": "Description for spring.servlet.multipart."
+    },
+    {
+      "name": "spring.could.alicloud.access-key",
+      "type": "java.lang.String",
+      "description": "Description for spring.could.alicloud.access-key."
+    },
+    {
+      "name": "server.tomecat.rootHttpPath",
+      "type": "java.lang.String",
+      "description": "Description for server.tomecat.rootHttpPath."
+    },
+    {
+      "name": "uploadFile.location",
+      "type": "java.lang.String",
+      "description": "Description for uploadFile.location."
+    }
+  ] }

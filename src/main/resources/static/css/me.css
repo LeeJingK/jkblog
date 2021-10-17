@@ -1,0 +1,332 @@
+footer {
+    width: 100% !important;
+    position: absolute !important;
+}
+
+.bg10 {
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+    background-image: url("../image/bg10.jpg") !important;
+}
+
+
+.bg4{
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+    background-image: url("../image/bg4.jpg") !important;
+}
+.bg3{
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+    background-image: url("../image/bg3.jpg") !important;
+}
+
+.bg2 {
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+    background-image: url("../image/bg2.jpg") !important;
+}
+
+body.pushable > .pusher {
+    background-image: url("../image/bg1.jpg") !important;
+}
+
+.side {
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url("../image/bg2.jpg") !important;
+}
+
+/*导航透明效果*/
+.nav {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.blue-transform {
+    background-color: rgba(253, 255, 226, 0.18) !important;
+}
+
+.white-transform {
+    background-color: rgba(251, 253, 250, 0.6) !important;
+}
+
+.black-transform {
+    background-color: rgba(0, 0, 0, 0.38) !important;
+}
+.only-transform{
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+.font-size-big {
+    font-size: 16px !important;
+}
+
+.font-size-large {
+    font-size: 14px !important;
+}
+
+.font-size-middle {
+    font-size: 12px !important;
+}
+
+.font-size-small {
+    font-size: 8px !important;
+}
+
+.font-size-mini {
+    font-size: 5px !important;
+}
+
+
+.m-container {
+    max-width: 80em !important;
+    margin: auto !important;
+}
+
+.m-container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+
+.m-padded-tb-mini {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+
+.m-padded-tb-tiny {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.m-padded-tb-small {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.m-padded-tb-littlesmall {
+    padding-top: 0.8em !important;
+    padding-bottom: 0.8em !important;
+}
+
+.m-padded-tb {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.m-padded-tb-big {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+.m-padded-tb-huge {
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+.m-padded-tb-massive {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+
+.m-padded-lr-responsive {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+.m-padded-lr-small {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+
+.m-padded-lr-large {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+.m-padded-lr-big {
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.m-padded-lr-massive {
+    padding-left: 5em !important;
+    padding-right: 5em !important;
+}
+
+.m-padded-mini {
+    padding-right: 0.2em !important;
+    padding-bottom: 0.2em !important;
+    padding-left: 0.2em !important;
+    padding-top: 0.2em !important;
+}
+
+.m-padded-bottom-mini {
+    padding-top: 4em !important;
+    padding-bottom: 0.1em !important;
+}
+
+.m-padded-top-small {
+    padding-top: 1em !important;
+}
+
+.m-padded-top-mini {
+    padding-top: 0.5em !important;
+}
+
+/*------text-----*/
+.m-text {
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.5;
+}
+
+.m-text-thin {
+    font-weight: 300 !important;
+}
+
+.m-text-spaced {
+    letter-spacing: 1.2px !important;
+}
+
+.m-text-lined {
+    line-height: 1.5 !important;
+}
+
+/*opacity*/
+.m-opacity-mini {
+    opacity: 0.5 !important;
+}
+
+.m-opacity {
+    opacity: 0.8 !important;
+}
+
+/*margin*/
+.m-margin-tb-tiny {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.m-margin-tb {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+.m-margin-top-small {
+    margin-top: 0.5em !important;
+}
+
+.m-margin-top {
+    margin-top: 1em !important;
+}
+
+.m-margin-top-large {
+    margin-top: 2em !important;
+}
+
+.m-margin-bottom-mini {
+    margin-bottom: 0.3em !important;
+}
+
+.m-margin-lf-small {
+    margin-right: 1em !important;
+    margin-left: 1em !important;
+}
+
+/*position*/
+.m-right-top {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.m-fixed {
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.m-right-bottom {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+/*----display----*/
+.m-inline-block {
+    display: inline-block !important;
+}
+
+/*color*/
+
+.m-black {
+    color: #333 !important;
+}
+
+.m-white {
+    color: white;
+}
+
+.m-pink {
+    color: #ffd2ec;
+}
+
+.m-orange {
+    color: #ff9237;
+}
+
+/*shadow*/
+.m-shadow-small {
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+* {
+    cursor: url(../image/mouse.ico), auto;
+}
+
+
+/*PC端不显示sidebar*/
+.m-mobile-show {
+    display: none !important;
+}
+
+/*媒体查询*/
+/*遇到问题：and后要有空格，不然没有效果
+    手机端代码放CSS下面*/
+@media screen and (max-width: 768px) {
+    /*手机端顶端菜单*/
+    .m-mobile-hide {
+        display: none !important;
+    }
+
+    .m-mobile-show {
+        display: block !important;
+    }
+
+    /*手机端阅读文章*/
+    .m-padded-lr-responsive {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /*博客留言登录*/
+    .m-mobile-wide {
+        width: 100% !important;
+    }
+}

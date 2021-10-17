@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th-data="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/ad_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+
+<body>
+<!--导航-->
+<div class="bg1">
+    <nav th:replace="admin/ad_fragments :: menu(1)" class="ui inverted attached segment">
+        <div class="ui container">
+            <!--        stackable小页面堆叠属性-->
+            <div class="ui inverted secondary menu stackable m-padded-tb-mini">
+                <h2 class="ui teal header item">后台管理</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <div class="m-item right menu m-mobile-hide">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="../../static/image/wechat.jpg">LJK
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    手机端显示菜单，jQuery获取toggle-->
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!--二级导航-->
+    <div class="ui inverted attached pointing menu">
+        <div class="ui container">
+            <div id="sidebar-btn" class="ui inverted labeled icon button">
+                <i class="sidebar icon"></i>点我
+            </div>
+            <div class="right menu">
+                <a href="#" th:href="@{/admin/blogs}" class=" item" style="color: #ffcbf0;"><i class="list icon"></i>列表</a>
+                <a href="#" th:href="@{/admin/blogs/input}" class="active item" style="color: #ffcbf0;"><i
+                        class="edit icon"></i>发布</a>
+            </div>
+        </div>
+    </div>
+    <!--  中间-->
+    <div class="m-container m-padded-tb-big">
+        <div class="ui container">
+            <form id="blog-form" action="#" th:object="${blog}" th:action="@{/admin/blogs}" method="post"
+                  class="ui form" enctype="multipart/form-data">
+                <input type="hidden" name="published" th:value="*{published}">
+                <input type="hidden" name="id" th:value="*{id}">
+                <div class="required field">
+                    <div class="ui left labeled input">
+                        <div class="ui selection compact dropdown label">
+                            <input type="hidden" value="原创" name="flag" th:data-value="*{flag}" data-value="原创">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">原创</div>
+                            <div class="menu">
+                                <div class="item" data-value="原创">原创</div>
+                                <div class="item" data-value="转载">转载</div>
+                            </div>
+                        </div>
+                        <input type="text" name="title" placeholder="标题" th:value="*{title}">
+                    </div>
+                </div>
+
+                <div class="required field">
+                    <div id="md-content" style="z-index: 1 !important;">
+                    <textarea placeholder="博客内容" name="content" th:text="*{content}" style="display: none">
+                    [TOC]
+
+                    #### Disabled options
+
+                    - TeX (Based on KaTeX);
+                    - Emoji;
+                    - Task lists;
+                    - HTML tags decode;
+                    - Flowchart and Sequence Diagram;
+                    </textarea>
+                    </div>
+                </div>
+                <div class="required field">
+                    <div id="md-description" style="z-index: 1 !important;">
+                        <textarea name="description" th:text="*{description}" placeholder="博客描述..."
+                                  maxlength="300"></textarea>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="required field">
+                        <div class="ui left labeled action input">
+                            <div class="ui compact bl-ue basic label">分类</div>
+                            <div class="ui selection fluid dropdown">
+                                <!--                                <input type="hidden" name="type.id" th:value="*{type.id}">-->
+                                <input type="hidden" name="typeId" th:value="*{typeId}">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">分类</div>
+                                <div class="menu">
+                                    <div th:each="type : ${types}" class="item" data-value="1"
+                                         th:data-value="${type.id}" th:text="${type.name}">java
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left labeled action input">
+                            <div class="ui compact blue basic label">标签</div>
+                            <div class="ui tag selection multiple search fluid dropdown">
+                                <input type="hidden" name="tagIds" th:value="*{tagIds}">
+                                <!--                                <input type="hidden" name="tag.id" th:value="${blog.getTagIds()}">-->
+                                <i class="dropdown icon"></i>
+                                <div class="default text">标签</div>
+                                <div class="menu">
+                                    <div th:each="tag : ${tags}" class="item" data-value="1"
+                                         th:data-value="${tag.id}" th:text="${tag.name}">java
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left labeled input">
+                        <label class="ui olive basic label">首图地址</label>
+                        <input type="text" name="firstPicture" th:value="*{firstPicture}" placeholder="首图引用地址">
+                        <input type="file" name="file" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="inline fields">
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="recommend" name="recommend" checked th:checked="*{recommend}"
+                                   class="hidden">
+                            <label for="recommend">推荐</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="shareStatement" name="shareStatement"
+                                   th:checked="*{shareStatement}"
+                                   class="hidden">
+                            <label for="shareStatement">转载声明</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="appreciation" name="appreciation" th:checked="*{appreciation}"
+                                   class="hidden">
+                            <label for="appreciation">打赏</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="commentOpen" name="commentOpen" th:checked="*{commentOpen}"
+                                   class="hidden">
+                            <label for="commentOpen">评论</label>
+                        </div>
+                    </div>
+                </div>
+                <!--                标题为空，提示错误-->
+                <div class="ui error message"></div>
+                <!--            发布区三个按钮-->
+                <div class="ui right aligned container">
+                    <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                    <button type="button" id="save-btn" class="ui secondary button">保存</button>
+                    <button type="button" id="publish-btn" class="ui teal button">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--/*/<th:block th:replace="admin/ad_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script src="../../static/lib/editormd/editormd.min.js"></script>
+<!--/*/</th:block>/*/-->
+<!--利用jQuery获取到菜单-->
+<script>
+    <!--    初始化markdown编译器-->
+    var contentEditor;
+    $(function () {
+        contentEditor = editormd("md-content", {
+            width: "100%",
+            height: 640,
+            syncScrolling: "single",
+            emoji: true,
+            path: "/lib/editormd/lib/",
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "/admin/OssUpload"
+        });
+
+        /*
+        // or
+       contentEditor = editormd({
+            id      : "contentEditor",
+            width   : "90%",
+            height  : 640,
+            path    : "../lib/"
+        });
+        */
+    });
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $("#sidebar-btn").click(function () {
+        $(".ui.sidebar")
+            .sidebar({
+                transition: 'scale down' //默认uncover，可以取值push\overlay\slide along\slide out\scale down
+            })
+            .sidebar("toggle")
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    $('#save-btn').click(function () {
+        $('[name="published"]').val(false);
+        $('#blog-form').submit();
+    });
+
+    $('#publish-btn').click(function () {
+        $('[name="published"]').val(true);
+        $('#blog-form').submit();
+    });
+
+    $('.ui.tag.dropdown')
+        .dropdown({
+            allowAddition: true
+        });
+
+    //表单验证: 为空，提示错误
+    $('.ui.form').form({
+        fields: {
+            title: {
+                identifier: 'title',
+                rules: [{
+                    type: 'empty',
+                    prompt: '标题：请输入博客标题'
+                }]
+            },
+            content: {
+                identifier: 'content',
+                rules: [{
+                    type: 'empty',
+                    prompt: '标题：请输入博客内容'
+                }]
+            },
+            typeId: {
+                identifier: 'typeId',
+                rules: [{
+                    type: 'empty',
+                    prompt: '标题：请输入博客分类'
+                }]
+            },
+            description: {
+                identifier: 'description',
+                rules: [{
+                    type: 'empty',
+                    prompt: '标题：请输入博客描述'
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

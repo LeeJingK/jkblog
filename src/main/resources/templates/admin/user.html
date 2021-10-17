@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/ad_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+
+<body>
+<!--导航-->
+<nav th:replace="admin/ad_fragments :: menu(2)" class="ui inverted attached segment">
+    <div class="ui container">
+        <!--        stackable小页面堆叠属性-->
+        <div class="ui inverted secondary menu stackable m-padded-tb-mini">
+            <h2 class="ui teal header item">后台管理</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <div class="m-item right menu m-mobile-hide">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img class="ui avatar image" src="../../static/image/wechat.jpg">LJK
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    手机端显示菜单，jQuery获取toggle-->
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--二级导航-->
+<div class="ui inverted attached pointing menu">
+    <div class="ui container">
+        <div id="sidebar-btn" class="ui inverted labeled icon button">
+            <i class="sidebar icon"></i>点我
+        </div>
+        <div class="right menu">
+            <a href="#" th:href="@{/admin/types}" class="active item" style="color: #ffcbf0;"><i
+                    class="list icon"></i>列表</a>
+            <a href="#" th:href="@{/admin/types/input}" class="item" style="color: #ffcbf0;"><i
+                    class="edit icon"></i>新增</a>
+        </div>
+    </div>
+</div>
+<!--中间内容-->
+<div class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}">恭喜，操作成功！</p>
+        </div>
+        <table class="ui compact celled teal table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:object="${user}">
+                <td th:text="${user.nickname}">京坤</td>
+                <td th:text="${user.avatar}">1</td>
+                <td>
+                    <a href="#" th:href="@{/admin/user/{id}/input(id=${user.id})}"
+                       class="ui mini teal basic button">编辑</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--底部-->
+<!--<footer class="ui inverted vertical segment m-padded-tb-massive">-->
+<!--    <div class="ui center aligned container">-->
+<!--        <div class="ui inverted divided stackable grid">-->
+<!--            <div class="three wide column">-->
+<!--                <div class="ui inverted link list">-->
+<!--                    <div class="item">-->
+<!--                        <img src="../../static/image/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="three wide column">-->
+<!--                <h4 class="ui inverted header">最新博客</h4>-->
+<!--                <div class="ui inverted link list">-->
+<!--                    <a href="#" class="item">你好我叫LiJingkun</a>-->
+<!--                    <a href="#" class="item">莫愁前路无知己</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="three wide column">-->
+<!--                <h4 class="ui inverted header">联系我</h4>-->
+<!--                <div class="ui inverted link list">-->
+<!--                    <a href="#" class="item">QQ：727919835</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="seven wide column">-->
+<!--                <h4 class="ui inverted header">简介</h4>-->
+<!--                <p class="m-text-thin m-padded-tb-mini">这是我的博客</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="ui inverted section divider"></div>-->
+<!--        <p class="m-text-thin m-padded-tb-mini m-opacity-mini m-text-spaced">Copyright@2020-2021 Designed by-->
+<!--            LiJingkun</p>-->
+<!--    </div>-->
+<!--</footer>-->
+<!--/*/<th:block th:replace="admin/ad_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+<!--利用jQuery获取到菜单-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $("#sidebar-btn").click(function () {
+        $(".ui.sidebar")
+            .sidebar({
+                transition: 'scale down' //默认uncover，可以取值push\overlay\slide along\slide out\scale down
+            })
+            .sidebar("toggle")
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    $('#clear-btn').on('click', function () {
+        $('.ui.type.dropdown')
+            .dropdown('clear');
+    });
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade')
+            ;
+        })
+    ;
+
+    function page(obj) {
+        $("[name='page']").val($(obj).data("page"));  //拿到自定义的data-page中的值
+        loaddata();
+    };
+
+</script>
+</body>
+</html>

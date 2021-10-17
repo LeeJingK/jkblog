@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head th:insert="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width"/>
+    <title>JKLee个人博客</title>
+    <meta name="keywords" content="个人博客">
+    <meta name="description" content="个人博客">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link href="../static/layui/css/layui.css" type="text/css">
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/index_style.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/animate.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="menu" class="hover_animation menu_open" data-mark="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div id="navgation" class="navgation navgation_close">
+    <ul class="point">
+        <li><a href="index.html" th:href="@{/index}">博客</a></li>
+        <li><a href="types.html"  th:href="@{/types/-1}">分类</a></li>
+        <li><a href="tags.html" th:href="@{/tags/-1}">标签</a></li>
+        <li><a href="archives.html" th:href="@{/archives}">归档</a></li>
+        <li><a href="about.html" th:href="@{/about}">关于博主</a></li>
+    </ul>
+</div>
+<div class="section" id="section1">
+    <div class="fp-tablecell">
+        <div class="page1">
+            <div class="nav wow zoomIn" data-wow-duration="2s">
+                <h1>前路漫漫</h1>
+                <p>莫愁前路无知己，天下谁人不识君</p>
+                <a class="ui button" style="margin-top: 20px" href="index.html" th:href="@{/index}">Enter Blog</a>
+            </div>
+            <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
+        </div>
+    </div>
+</div>
+<div class="section" id="section2">
+    <div class="fp-tablecell">
+        <div class="page2">
+            <div class="warp-box">
+                <div class="new-article">
+                    <div class="inner wow fadeInDown" data-wow-delay="1s">
+                        <h1 style="color:#eaebff;">最新推荐</h1>
+                        <p style="color:#ffe9f9;">少年易老学难成
+                            <br>一寸光阴不可轻
+                        </p>
+                    </div>
+                </div>
+                <div class="ui wow fadeInUp" data-wow-delay="1.5s">
+                        <div class="ui blue-transform segment" th:each="blog : ${recommendBlogs}">
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"
+                               class="m-white" th:text="${blog.title}">JavaSE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" id="section3">
+    <div class="fp-tablecell">
+        <div class="page3">
+            <div class="warp-box">
+                <div class="warp">
+                    <div class="inner">
+                        <div class="links">
+                            <ul>
+                                <li class="wow fadeInLeft" data-wow-delay="1s"><a href="#" th:href="@{/types/-1}">博客分类</a></li>
+                                <li class="wow fadeInRight" data-wow-delay="1s"><a href="#" th:href="@{/archives}">归档</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" id="section4">
+    <div class="fp-tablecell">
+        <div class="page4">
+            <div class="warp-box">
+                <div class="about">
+                    <div class="inner">
+                        <h1 class="wow fadeInLeft" style="color: #b6e3ff">长大</h1>
+                        <p class="wow fadeInRight" style="color: rgba(243,237,255,0.71)">
+                            我弄丢了一些东西，于是拼命的寻找...<br>
+                            后来，连想起丢了什么都成了奢望
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/image/wechat.jpg" th:src="@{/image/wechat.jpg}" class="ui rounded image"
+                             alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">关于本站</h4>
+                <div class="ui inverted m-inline-block">
+                    <div class="mini" style="color: #ffe0ec">本站已经运行<span style="color: #9effff" id="momk"></span>啦~</div>
+                </div>
+                <div class="mini" style="color: #ffe0ec"> 本站总访问量<span style="color: #9effff" id="busuanzi_value_site_pv"></span>次<br>
+                    本站访客数<span style="color: #9effff" id="busuanzi_value_site_uv"></span>人</div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">QQ：727919835</a>
+                    <a href="#" class="item">WeChat：belovedroses</a>
+                    <a href="#" class="item">邮箱：727919835@qq.com</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">关于这里</h4>
+                <p class="m-text-thin m-padded-tb-mini">分享技术<br>分享音乐<br>分享感悟<br>分享生活</p>
+            </div>
+        </div>
+        <div class="ui inverted m-padded-bottom-mini divider"></div>
+      <p class="m-text-thin m-padded-tb-mini m-opacity-mini m-text-spaced">Copyright@2020-2021 Designed by
+            Lee</p><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color: rgba(229,232,255,0.71)">豫ICP备2021009560号</a>
+    </div>
+</footer>
+<script src="/static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script src="/static/js/wow.min.js" th:src="@{/js/wow.min.js}"></script>
+<script src="/static/js/index.js" th:src="@{/js/index.js}"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script language="javascript">
+    setInterval(function () {
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+    }, 1000);
+
+    function show_date_time() {
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay = new Date("03-01-2021 00:00:00");//建站日期
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        sectimeold = timeold / 1000
+        secondsold = Math.floor(sectimeold);
+        msPerDay = 24 * 60 * 60 * 1000
+        e_daysold = timeold / msPerDay
+        daysold = Math.floor(e_daysold);
+        e_hrsold = (daysold - e_daysold) * -24;
+        hrsold = Math.floor(e_hrsold);
+        e_minsold = (hrsold - e_hrsold) * -60;
+        minsold = Math.floor((hrsold - e_hrsold) * -60);
+        seconds = Math.floor((minsold - e_minsold) * -60);
+        momk.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+    }
+
+    show_date_time();
+</script>
+</body>
+</html>

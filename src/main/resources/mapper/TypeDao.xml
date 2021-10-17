@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljk.dao.TypeDao">
+
+    <!--查询所有分类-->
+    <select id="getAllType" resultType="Type">
+        select * from blogs.t_type
+    </select>
+
+    <!--    查询匪类id，name-->
+    <select id="getType" resultType="Type">
+        select id,name from blogs.t_type where id=#{id}
+    </select>
+
+    <!--查询分类名称-->
+    <select id="selectTypeByName" resultType="Type">
+        select * from blogs.t_type where name=#{name}
+    </select>
+    <!--增加分类-->
+    <insert id="saveType" parameterType="Type">
+        insert into blogs.t_type values (#{id},#{name})
+    </insert>
+    <!--修改已有分类-->
+    <update id="updateType" parameterType="Type">
+        update blogs.t_type set name = #{name} where id=#{id}
+    </update>
+
+    <!--    删除分类-->
+    <delete id="deleteType" parameterType="Type">
+        delete from blogs.t_type where id=#{id}
+    </delete>
+
+    <!--前端分类列-->
+    <resultMap id="type" type="Type">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="Blog">
+            <id property="id" column="id"/>
+            <result property="title" column="title"/>
+            <result property="typeId" column="type_id"/>
+        </collection>
+    </resultMap>
+    <select id="getBlogType" resultMap="type">
+        select t.id, name, b.id,b.title,b.type_id
+        from blogs.t_type as t, blogs.t_blog as b
+        where t.id=b.type_id
+    </select>
+
+</mapper>

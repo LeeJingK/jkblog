@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">详情</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video-js.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/client.css" th:href="@{/css/client.css}">
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link href="../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}">
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          th:href="@{/lib/font-awesome/css/font-awesome.min.css}">
+    <link href="../static/css/index_style.css" rel="stylesheet" th:href="@{/css/index_style.css}">
+    <link href="../static/css/animate.min.css" rel="stylesheet" th:href="@{/css/animate.min.css}">
+</head>
+<body>
+<!--导航-->
+<nav th:fragment="menu(n)" id="nav" class="ui nav animated fadeInDown inverted attached segment m-shadow-small">
+    <div class="ui container">
+        <!--        stackable小页面堆叠属性-->
+        <div class="ui inverted secondary menu stackable m-padded-tb-mini">
+            <a th:href="@{/}"><h2 class="ui white header item">Lee's Blog</h2>
+            </a>
+            <a href="#" th:href="@{/index}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i
+                    class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide"
+               th:classappend="${n==2} ? 'active'"><i
+                    class="idea icon"></i>分类</a>
+            <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i
+                    class="tags icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide"
+               th:classappend="${n==4} ? 'active'"><i
+                    class="clone icon"></i>归档</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i
+                    class="info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide">
+                <form action="#" name="search" th:action="@{/search}" method="post" target="_blank">
+                    <div class="ui icon inverted input">
+                        <input type="text" name="query" placeholder="Search..." th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+                &nbsp;&nbsp;&nbsp;
+                <a href="#" th:href="@{/admin}" class="m-item item m-mobile-hide"><i class="user secret icon"></i>
+                    登录</a>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--底部-->
+<footer th:fragment="footer" class="ui inverted vertical nav segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">微信公众号</h4>
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/image/wechat.jpg" th:src="@{/image/wechat.jpg}" class="ui rounded image"
+                             alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">关于本站</h4>
+                <div class="ui inverted m-inline-block">
+                    <div class="mini" style="color: #ffe0ec">本站已经运行<span style="color: #9effff" id="momk"></span>啦~</div>
+                </div>
+                <div class="mini" style="color: #ffe0ec"> 本站总访问量<span style="color: #9effff" id="busuanzi_value_site_pv"></span>次<br>
+                    本站访客数<span style="color: #9effff" id="busuanzi_value_site_uv"></span>人</div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item" style="color: #ccf8ff">QQ：727919835</a>
+                    <a href="#" class="item" style="color: #ccf8ff">Email：727919835@qq.com</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">个人简介</h4>
+                <p style="color: #ccf8ff" class="m-text-thin m-padded-tb-mini">醉后不知天在水，满船清梦压星河。</p>
+            </div>
+        </div>
+        <div class="ui inverted m-padded-bottom-mini">
+            <p class="m-text-thin m-padded-tb-mini m-opacity-mini m-text-spaced">Copyright@2020-2021 Designed by
+                Lee</p><br><a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2021009560号</a></div>
+    </div>
+    <meting-js
+            server="netease"
+            type="playlist"
+            id="6721542478"
+            fixed="true"
+            autoplay="true"
+            loop="all"
+            order="random"
+            preload="auto"
+            list-folded="ture"
+            list-max-height="500px"
+            lrc-type="0"
+    >
+    </meting-js>
+</footer>
+<!---JS--->
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="/static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="/static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="/static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script src="/static/lib/waypoints/jquery.waypoints.min.js"
+            th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script src="/static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+    <script src="/static/js/wow.min.js" th:src="@{/js/wow.min.js}"></script>
+    <script src="/static/js/index.js" th:src="@{/js/index.js}"></script>
+    <script src="/static/js/mouseClick.js" th:src="@{/js/mouseClick.js}"></script>
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</th:block>
+<script language="javascript">
+    setInterval(function () {
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+    }, 1000);
+
+    function show_date_time() {
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay = new Date("03-01-2021 00:00:00");//建站日期
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        sectimeold = timeold / 1000
+        secondsold = Math.floor(sectimeold);
+        msPerDay = 24 * 60 * 60 * 1000
+        e_daysold = timeold / msPerDay
+        daysold = Math.floor(e_daysold);
+        e_hrsold = (daysold - e_daysold) * -24;
+        hrsold = Math.floor(e_hrsold);
+        e_minsold = (hrsold - e_hrsold) * -60;
+        minsold = Math.floor((hrsold - e_hrsold) * -60);
+        seconds = Math.floor((minsold - e_minsold) * -60);
+        momk.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+    }
+
+    show_date_time();
+
+    window.onscroll = function () {
+        // 滚动时当前位置距顶部的距离
+        var topScroll = document.documentElement.scrollTop;
+        console.log(topScroll);
+        // 获取导航id
+        var topbox = document.getElementById("nav");
+        // 滚动距离大于多少时执行下面事件
+        if (topScroll > 100) {
+            // 到了那个距离相当于给了导航定位
+            topbox.style.position = 'fixed';
+            topbox.style.top = '0';
+            topbox.style.zIndex = '999';
+            topbox.style.height = '100px'
+        } else {
+            //小于的时候让他恢复原状
+            topbox.style = ''
+        }
+    };
+</script>
+
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 100,
+            "height": 200,
+            "hOffset": 50,
+            "vOffset": -100
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 1,
+            "opacityOnHover": 1
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="23">
+            <item index="0" class="java.lang.String" itemvalue="th:action" />
+            <item index="1" class="java.lang.String" itemvalue="th:classappend" />
+            <item index="2" class="java.lang.String" itemvalue="th:href" />
+            <item index="3" class="java.lang.String" itemvalue="th:text" />
+            <item index="4" class="java.lang.String" itemvalue="th:each" />
+            <item index="5" class="java.lang.String" itemvalue="th:src" />
+            <item index="6" class="java.lang.String" itemvalue="th:replace" />
+            <item index="7" class="java.lang.String" itemvalue="th:value" />
+            <item index="8" class="java.lang.String" itemvalue="th:object" />
+            <item index="9" class="java.lang.String" itemvalue="th:unless" />
+            <item index="10" class="java.lang.String" itemvalue="th:utext" />
+            <item index="11" class="java.lang.String" itemvalue="th:data-value" />
+            <item index="12" class="java.lang.String" itemvalue="th-data:value" />
+            <item index="13" class="java.lang.String" itemvalue="framespacing" />
+            <item index="14" class="java.lang.String" itemvalue="border" />
+            <item index="15" class="java.lang.String" itemvalue="scroll" />
+            <item index="16" class="java.lang.String" itemvalue="th:fragment" />
+            <item index="17" class="java.lang.String" itemvalue="th:insert" />
+            <item index="18" class="java.lang.String" itemvalue="enctype" />
+            <item index="19" class="java.lang.String" itemvalue="th:inline" />
+            <item index="20" class="java.lang.String" itemvalue="th:if" />
+            <item index="21" class="java.lang.String" itemvalue="&amp;high_quality" />
+            <item index="22" class="java.lang.String" itemvalue="&amp;danmaku" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="div" />
+            <item index="7" class="java.lang.String" itemvalue="tr" />
+            <item index="8" class="java.lang.String" itemvalue="th:block" />
+            <item index="9" class="java.lang.String" itemvalue="meting-js" />
+            <item index="10" class="java.lang.String" itemvalue="th" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
